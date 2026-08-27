@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Générateur de QCM | Formateur Toolkit</title>
+
+    <meta name="description"
+          content="Créez facilement des questionnaires à choix multiples avec Formateur Toolkit.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="container navbar">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🎓</span>
+                <span>Formateur<span class="logo-accent">Toolkit</span></span>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html">Accueil</a>
+                <a href="#generateur">Générateur</a>
+                <a href="https://github.com/" target="_blank">
+                    GitHub ↗
+                </a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <section class="hero" id="generateur">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        📝 OUTIL PÉDAGOGIQUE
+                    </span>
+
+                    <h1>
+                        Générateur de
+                        <span>QCM</span>
+                    </h1>
+
+                    <p>
+                        Préparez rapidement vos questionnaires
+                        à choix multiples pour vos apprenants.
+                    </p>
+
+                </div>
+
+
+                <!-- ================= FORMULAIRE ================= -->
+
+                <div class="hero-card">
+
+                    <form id="qcmForm">
+
+                        <div class="form-group">
+
+                            <label for="question">
+                                Question
+                            </label>
+
+                            <input
+                                type="text"
+                                id="question"
+                                placeholder="Ex : Qu'est-ce qu'une entreprise ?"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="answerA">
+                                Réponse A
+                            </label>
+
+                            <input
+                                type="text"
+                                id="answerA"
+                                placeholder="Première réponse"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="answerB">
+                                Réponse B
+                            </label>
+
+                            <input
+                                type="text"
+                                id="answerB"
+                                placeholder="Deuxième réponse"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="answerC">
+                                Réponse C
+                            </label>
+
+                            <input
+                                type="text"
+                                id="answerC"
+                                placeholder="Troisième réponse"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="answerD">
+                                Réponse D
+                            </label>
+
+                            <input
+                                type="text"
+                                id="answerD"
+                                placeholder="Quatrième réponse"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="correctAnswer">
+                                Bonne réponse
+                            </label>
+
+                            <select id="correctAnswer" required>
+
+                                <option value="">
+                                    Sélectionner
+                                </option>
+
+                                <option value="A">
+                                    Réponse A
+                                </option>
+
+                                <option value="B">
+                                    Réponse B
+                                </option>
+
+                                <option value="C">
+                                    Réponse C
+                                </option>
+
+                                <option value="D">
+                                    Réponse D
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            ➕ Ajouter la question
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- ================= QUESTIONS ================= -->
+
+                <section
+                    id="questionsContainer"
+                    class="tools-section"
+                    style="margin-top: 40px;"
+                >
+
+                    <div class="section-heading">
+
+                        <span class="section-label">
+                            VOTRE QCM
+                        </span>
+
+                        <h2>
+                            Questions
+                            <span>créées</span>
+                        </h2>
+
+                    </div>
+
+                    <div id="questionsList"></div>
+
+                </section>
+
+
+                <!-- ================= ACTIONS ================= -->
+
+                <div
+                    style="
+                    display:flex;
+                    justify-content:center;
+                    gap:15px;
+                    flex-wrap:wrap;
+                    margin-top:30px;
+                    "
+                >
+
+                    <button
+                        id="clearQcm"
+                        class="btn btn-secondary"
+                        type="button"
+                    >
+                        🗑️ Effacer
+                    </button>
+
+                    <button
+                        id="printQcm"
+                        class="btn btn-primary"
+                        type="button"
+                    >
+                        🖨️ Imprimer le QCM
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+
+                <strong>
+                    🎓 Formateur Toolkit
+                </strong>
+
+                <p>
+                    La boîte à outils du formateur moderne.
+                </p>
+
+            </div>
+
+            <div>
+
+                <p>
+                    Projet Open Source — Licence MIT
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="qcm.js"></script>
+
+</body>
+</html>
+</html>
