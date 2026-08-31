@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aitittohicham-arch.github.io/formateur-toolkit/sitemap.xml
